@@ -145,8 +145,8 @@ install_manylinux_build_deps() {
             libdrm-devel mesa-libgbm-devel libsamplerate-devel
   # ThorVG (kivy.lib.thorvg wrapper) builds via meson; the yum-shipped
   # meson on manylinux2014 is too old for ThorVG 1.0.x, so pin a recent
-  # version through pip.
-  python3 -m pip install --upgrade meson
+  # version through pipx.
+  pipx install "meson==1.11.1"
 }
 
 install_ubuntu_build_deps() {
