@@ -1116,8 +1116,8 @@ Context.html#getFilesDir()>`_ is returned.
         Except on Android, set Android state to stop, Kivy state then follows.
         '''
         if platform == 'android':
-            from android import mActivity
-            mActivity.finishAndRemoveTask()
+            from kivy.mobile._platform.android import finish_and_remove_task
+            finish_and_remove_task()
         else:
             self._stop()
 
@@ -1139,8 +1139,8 @@ Context.html#getFilesDir()>`_ is returned.
         .. versionadded:: 2.2.0
         '''
         if platform == 'android':
-            from android import mActivity
-            mActivity.moveTaskToBack(True)
+            from kivy.mobile._platform.android import move_task_to_back
+            move_task_to_back()
         else:
             Logger.info('App.pause() is not available on this OS.')
 
